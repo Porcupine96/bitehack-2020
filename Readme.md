@@ -5,6 +5,8 @@
 Chatbot created for automating issue creation in ticketing systems (like `JIRA`).
 It can be used by clients of software house who often don't provide enough
 information for developers when creating bug issues.
+We chose to use `Facebook Messenger` as communication channel, but application
+could support more channels (WhatsApp, custom-build chat, Slack) in the future.
 
 Chatbot during conversation with user extracts following pieces of information:
 
@@ -16,6 +18,9 @@ Chatbot during conversation with user extracts following pieces of information:
 - priority of issue
 - incident date
 - issue description (additional)
+
+Chatbot also has an ability to warn user if issue that is being created looks
+like a duplicate.
 
 ## Screenshots
 
@@ -46,6 +51,8 @@ pieces of information from messages. Exposes API used by webview in [bite-fronte
 
 Service responsible for extracting issue data from text.
 Communicates with [hackathon-backend](#hackathon-backend) using gRPC.
+Extracts data using NLP techniques, as well as simple heuristics. Uses word2vec
+embeddings and cosine similarity to detect duplicates between issues.
 
 ### Technologies
 
