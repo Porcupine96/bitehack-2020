@@ -1,5 +1,7 @@
 # CodeVillains (BITEhack 2020)
 
+Team: Dawid Godek, Jakub Darul, Łukasz Kaźmierczak
+
 # Functionality
 
 Chatbot created for automating issue creation in ticketing systems (like `JIRA`).
