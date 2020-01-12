@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.iml
+.idea/
+target/
+*.lock
+.ipynb_checkpoints/
+cll/
+*.out
+*.bak
+venv/
+generated/

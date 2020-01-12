@@ -1,0 +1,21 @@
+{
+  "name": "bite-frontend",
+  "reason": { "react-jsx": 3 },
+  "refmt": 3,
+  "sources": [{ "dir": "src", "subdirs": true }],
+  "package-specs": { "module": "commonjs", "in-source": true },
+  "suffix": ".bs.js",
+  "warnings": { "error": "+101", "number": "+A-40-42-4-102-41-48" },
+  "bsc-flags": ["-bs-super-errors"],
+  "bs-dependencies": [
+    "reason-react",
+    "bs-css",
+    "@glennsl/bs-json",
+    "@aantron/repromise",
+    "re-classnames",
+    "bs-fetch",
+    "bs-webapi",
+    "@jsiebern/bs-material-ui",
+    "re-formality"
+  ]
+}

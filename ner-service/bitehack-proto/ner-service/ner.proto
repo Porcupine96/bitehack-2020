@@ -1,0 +1,46 @@
+syntax = "proto2";
+
+package com.bitehack.ner.proto.api;
+
+service NerService {
+    rpc GetExtractions(GetExtractionsRequest) returns (GetExtractionsResponse);
+
+    rpc GetOddlySimilar(GetOddlySimilarRequest) returns (GetOddlySimilarResponse);
+}
+
+message GetExtractionsRequest {
+    required string text = 1;
+    optional bool computeUrgency = 2;
+}
+
+message GetExtractionsResponse {
+    repeated Extraction extractions = 1;
+}
+
+message Extraction {
+    repeated string extracted = 1;
+    required ExtractionType extractionType = 2;
+}
+
+enum ExtractionType {
+    PRECONDITION = 1;
+    EXPECTED = 2;
+    ATUAL = 3;
+    PRIORITY = 4;
+    ERROR_DATE = 5;
+    PART_OF_APP = 6;
+}
+
+message GetOddlySimilarRequest {
+    required IssueEntry inQuestion = 1;
+    repeated IssueEntry entries = 2;
+}
+
+message IssueEntry {
+    required string title = 1;
+    required string id = 2;
+}
+
+message GetOddlySimilarResponse {
+    repeated IssueEntry similar = 1;
+}

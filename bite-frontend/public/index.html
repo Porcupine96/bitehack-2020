@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <title>Bitehack</title>
+    <style>
+      * {
+        font-family: "Muli", sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        max-width: 720px;
+        font-size: 16px;
+      }
+
+      html,
+      body,
+      #root {
+        min-height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+          /* overflow-y: hidden; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <div id="root"></div>
+    <script>
+      (function(d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "Messenger");
+    </script>
+    <script src="../src/App.bs.js"></script>
+  </body>
+</html>

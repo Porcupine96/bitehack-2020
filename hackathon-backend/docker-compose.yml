@@ -1,0 +1,21 @@
+version: "3.1"
+
+services:
+  backend:
+    image: hackathon-backend:0.1
+    ports:
+      - "0.0.0.0:8080:8080"
+    restart: always
+    volumes:
+      - ./keys:/keys
+    env_file:
+      - env.env
+  postgres:
+    image: postgres:9.6.5
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: antananarywaishorselikingcanal
+      POSTGRES_USER: wildhorses
+      POSTGRES_DB: db_name

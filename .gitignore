@@ -1,0 +1,8 @@
+.metals/
+.bloop/
+metals.sbt
+target/
+out/
+node_modules/
+*.js
+venv/

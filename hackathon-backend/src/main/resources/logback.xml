@@ -1,0 +1,22 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} %-5level %logger{36} %X{sourceThread} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="slick.jdbc.StatementInvoker.result" level="ERROR"/>
+    <logger name="slick.jdbc.JdbcBackend.parameter" level="ERROR"/>
+    <logger name="slick.jdbc.JdbcBackend.statement" level="ERROR"/>
+    <logger name="slick.basic.BasicBackend.stream" level="ERROR"/>
+    <logger name="slick.basic.BasicBackend.action" level="ERROR"/>
+    <logger name="slick.jdbc.JdbcBackend.result" level="ERROR"/>
+    <logger name="slick.compiler" level="ERROR"/>
+    <logger name="slick.relational.ResultConverterCompiler" level="ERROR"/>
+    <logger name="slick.jdbc.JdbcBackend.benchmark" level="ERROR"/>
+    <logger name="com.zaxxer" level="ERROR"/>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
