@@ -1,4 +1,4 @@
-# Chatbot for JIRA
+# CodeVillains (BITEhack 2020)
 
 # Functionality
 
