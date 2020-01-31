@@ -2,26 +2,26 @@ let apiUrl = "https://bitehack.codeheroes.tech";
 
 let fetch = (path: string, params) =>
   Fetch.fetchWithInit(apiUrl ++ path, params)
-  |> Repromise.Rejectable.fromJsPromise
-  |> Repromise.Rejectable.andThen(res => {
+  ->Promise.Js.fromBsPromise
+  ->Promise.Js.flatMap(res => {
        let status = Fetch.Response.status(res);
        switch (status) {
        | 200
        | 201 =>
          Fetch.Response.json(res)
-         |> Repromise.Rejectable.fromJsPromise
-         |> Repromise.Rejectable.map(json => Belt.Result.Ok(json))
+         ->Promise.Js.fromBsPromise
+         ->Promise.Js.map(json => Belt.Result.Ok(json))
 
        | status =>
          Fetch.Response.text(res)
-         |> Repromise.Rejectable.fromJsPromise
-         |> Repromise.Rejectable.map(text =>
+         ->Promise.Js.fromBsPromise
+         ->Promise.Js.map(text =>
               Belt.Result.Error(`Error((status, text)))
             )
        };
      })
-  |> Repromise.Rejectable.catch(error =>
-       Belt.Result.Error(`Exception(error)) |> Repromise.resolved
+  ->Promise.Js.catch(error =>
+       Belt.Result.Error(`Exception(error))->Promise.resolved
      );
 
 module JsonData = {

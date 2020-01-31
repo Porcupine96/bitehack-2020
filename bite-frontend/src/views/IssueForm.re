@@ -270,7 +270,7 @@ let make = (~state: FormConfig.state) => {
         },
         (),
       )
-      |> Repromise.Rejectable.wait(result => {
+      ->Promise.Js.get(result => {
            Js.log(result);
 
            MessengerExtensions.closeWindow("facebook", error =>

@@ -11,7 +11,7 @@
     "reason-react",
     "bs-css",
     "@glennsl/bs-json",
-    "@aantron/repromise",
+    "reason-promise",
     "re-classnames",
     "bs-fetch",
     "bs-webapi",
